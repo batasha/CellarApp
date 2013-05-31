@@ -10,4 +10,8 @@ class User < ActiveRecord::Base
   validates :login, uniqueness: true
   validates :password, presence: true, length: {minimum: 6}
   validates :password_confirmation, presence: true
+
+  def new_session_token
+    self.update_attribute(:session_token, SecureRandom.hex)
+  end
 end
