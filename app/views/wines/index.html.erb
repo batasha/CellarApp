@@ -1,8 +1,9 @@
 <script type="text/javascript" charset="utf-8">
-$(function () {
+  $(function () {
 
-  var wineData = <%= @wines.to_json.html_safe %>;
+    var wineData = <%= @wines.to_json.html_safe %>;
 
-  window.WC.initialize($('body')[0], wineData);
-})
+    window.WC.initialize($('body')[0], wineData);
+
+  });
 </script>

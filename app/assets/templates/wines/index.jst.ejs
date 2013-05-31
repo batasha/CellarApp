@@ -1,0 +1,8 @@
+<ul>
+  <% wines.each(function(wine) { %>
+     <li class="wine" data-id="<%= wine.escape('id') %>">
+     <a href="#/wines/<%= wine.escape('id') %>">
+       <%= wine.escape('name') %> <%= wine.escape('vintage') %>
+      </li>
+  <% }) %>
+</ul>
