@@ -5,4 +5,6 @@ CellarApp::Application.routes.draw do
   match 'register', to: 'users#new'
   match 'login', to: 'sessions#new'
   match 'logout', to: 'sessions#destroy'
+
+  root to: 'wines'
 end
