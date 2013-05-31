@@ -14,6 +14,11 @@ class WinesController < ApplicationController
   end
 
   def create
-
+    @wine = Wine.new(params[:wine])
+    if @wine.save
+      render json: @wine
+    else
+      render json: @wine.errors, status: 422
+    end
   end
 end
