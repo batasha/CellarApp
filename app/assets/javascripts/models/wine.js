@@ -1,4 +1,4 @@
-WC.Models.Wine = Backbone.Model.extend({
+WC.Models.Wine = Backbone.RelationalModel.extend({
   url: '/wines/',
 
   schema: {
@@ -7,5 +7,13 @@ WC.Models.Wine = Backbone.Model.extend({
     color: {type: 'Select', options: ['red', 'white', 'rose']},
     vintage: 'Number',
     quantity: 'Number'
-  }
+  },
+
+  relations: [{
+    type: 'HasMany',
+    key: 'tasting_notes',
+    relatedModel: 'WC.Models.TastingNote',
+    collectionType: 'WC.Collections.TastingNotes',
+    includeInJSON: false
+  }]
 });
