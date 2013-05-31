@@ -1,5 +1,8 @@
 CellarApp::Application.routes.draw do
   resources :users
+  resources :wines
+  resources :bins
+
   resources :sessions, only: [:new, :create, :destroy]
 
   match 'register', to: 'users#new'

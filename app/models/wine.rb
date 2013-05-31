@@ -5,6 +5,4 @@ class Wine < ActiveRecord::Base
   has_many :storage_locations
   has_many :bins, through: :storage_locations
   belongs_to :user
-
-  validates :vintage, allow_nil: true
 end
